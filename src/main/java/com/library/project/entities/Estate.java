@@ -3,10 +3,20 @@ package com.library.project.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "estate")
 public class Estate implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private String edition;
@@ -17,7 +27,7 @@ public class Estate implements Serializable {
 	private Integer qtd_exemplary;
 	
 	public Estate() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public Estate(Long id, String title, String edition, Integer num_edition, String author, String bookcase,
